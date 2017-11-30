@@ -157,20 +157,24 @@ def lines():
 
     window= rg.RoseWindow()
 
-    line1x = (30,50)
-    line1y = (50,70)
-    line2x = (100,60)
-    line2y = (1000,80)
+    line1x = rg.Point(30,50)
+    line1y = rg.Point(50,70)
+    line2x = rg.Point(100,60)
+    line2y = rg.Point(1000,80)
 
     line1 = rg.Line(line1x,line1y)
     line2 = rg.Line(line2x,line2y)
-
+    line2.thickness = 50
     line1.attach_to(window)
     line2.attach_to(window)
     window.render()
+    print(line2.get_midpoint())
+    print(line2.get_midpoint().x)
+    print(line2.get_midpoint().y)
+
     window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # ------------------------------------------------------------------
 
 
